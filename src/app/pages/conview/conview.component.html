@@ -1,0 +1,106 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div style="overflow-x:auto;margin-left: 200px;" class="abc">
+
+  
+<h3 style="margin-left: 50px;"><b><u>All Booking List</u></b></h3>
+
+    <table>
+      <tr>
+        <th style="text-align: center;">Cus Id</th>
+        <th style="text-align: center;">Name</th>
+        <th style="text-align: center;">Email</th>
+        <th style="text-align: center;">Phnumber</th>
+        <th style="text-align: center;">Booking Date</th>
+
+        <th style="text-align: center;">Booking Time</th>
+        <th style="text-align: center;">Coming Time</th>
+        <th style="text-align: center;">Guest</th>
+
+        <th v>Actions</th>
+        
+      </tr>
+      <tr *ngFor="let v of form">
+        <td style="text-align: center;">{{v.id}}</td>
+        <td style="text-align: center;">{{v.name}}</td>
+        <td style="text-align: center;">{{v.email}}</td>
+        <td style="text-align: center;">{{v.phnumber}}</td>
+        <td style="text-align: center;">{{v.bookingDate}}</td>
+        <td style="text-align: center;">{{v.bookingTime}}</td>
+        <td style="text-align: center;">{{v.comingTime}}</td>
+        <td style="text-align: center;">{{v.guest}}</td> -->
+
+        <!-- <td><a href="#" routerLink="/add" class="btn btn-info" style="color:white" >Create</a>
+
+          <a href="#" [routerLink]="['/post/',v.id,'edit']" class="btn btn-info" style="color:white" >edit</a>
+          <button type="button" (click)="delete(v.id)" class="btn btn-danger" >Delete</button></td> -->
+        
+
+
+          <!-- <td><span *ngFor="let a of v.role">{{a.roleName}}</span></td> -->
+        <!-- <td><button type="submit">
+         <i class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);">Edit</i>
+        </button></td>
+        <td><button type="submit"><i class='bx bx-trash' style="font-size: 30px; color: red;" (click)="delete(v)">Delete</i></button></td>
+
+      </tr>
+    
+      
+    </table>
+  </div> -->
+
+
+  <div class="container">
+    <h1>View Post</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+   
+    <div>
+        <strong>ID:</strong>
+        <p>{{ post.id }}</p>
+    </div>
+   
+    <div>
+        <strong>Name:</strong>
+        <p>{{ post.name }}</p>
+    </div>
+   
+    <div>
+        <strong>Email:</strong>
+        <p>{{post.email }}</p>
+    </div>
+
+    <div>
+        <strong>phonenumber:</strong>
+        <p>{{post.phnumber }}</p>
+    </div>
+
+    <div>
+        <strong>Bookingdate:</strong>
+        <p>{{post.bookingDate }}</p>
+    </div>
+
+    <div>
+        <strong>BookingTime:</strong>
+        <p>{{post.bookingTime }}</p>
+    </div>
+
+    <div>
+        <strong>ComingTime:</strong>
+        <p>{{post.comingTime }}</p>
+    </div>
+
+    <div>
+        <strong>Numberofguests:</strong>
+        <p>{{post.guest }}</p>
+    </div>
+
+  
+</div>
+
+

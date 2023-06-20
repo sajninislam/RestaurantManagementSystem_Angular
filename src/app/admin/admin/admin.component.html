@@ -1,0 +1,129 @@
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-telegram'></i>
+      <span class="logo_name">Admin</span>
+    </div>
+
+
+    <!-- <div class="logo-details">
+      <i class='bx bxl-telegram'></i>
+      <span class="logo_name"><a routerLink="../admins/profile" href="" style="text-decoration: none;">{{username}}</a></span>
+    </div> -->
+
+
+
+    <ul class="nav-links">
+  
+  
+      <li>
+        <a routerLink="active" routerLink="../admins/dashboard">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+      </li>
+  
+      <li>
+        <a href="#" routerLink="../admins/addemployee" routerLinkActive="active">
+          <i class='bx bx-box'></i>
+          <span class="links_name">Employee</span>
+        </a>
+  
+  
+      </li>
+  
+      <li>
+        <a href="#" routerLink="../admins/userList" routerLinkActive="active">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name">User list</span>
+        </a>
+      </li>
+
+      <!-- <li>
+        <a href="#" routerLink="../admins/branch" routerLinkActive="active">
+          <i class='bx bx-border-all'></i>
+          <span class="links_name">Branches</span>
+        </a>
+      </li> -->
+
+
+      <li>
+        <!-- href="#" routerLink="../admins/conview"  -->
+        <a href="#" routerLink="../admins/index" routerLinkActive="active">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name" >View Tablebooking list</span>
+        </a>
+      </li>
+
+
+  
+      <li>
+        <a href="#" routerLink="../admins/branch" routerLinkActive="active">
+          <i class='bx bx-border-all'></i>
+          <span class="links_name">Branches</span>
+        </a>
+      </li>
+  
+      <li>
+        <a href="#"  routerLink="../admins/parcelDetail" routerLinkActive="active">
+          <i class='bx bx-run'></i>
+          <span class="links_name">Order list</span>
+        </a>
+      </li>
+
+
+      <!-- <li>
+        <a href="#"  routerLink="../admins/" routerLinkActive="active">
+          <i class='bx bx-run'></i>
+          <span class="links_name">Contact us</span>
+        </a>
+      </li> -->
+  
+      <li>
+        <a>
+          <i class='bx bxs-report'></i>
+          <span class="links_name">Reports</span>
+        </a>
+      </li>
+  
+      <!-- <li>
+        <a href="#" routerLink="../admins/branch">
+          <i class='bx bx-book-alt'></i>
+          <span class="links_name">Total Transation</span>
+        </a>
+      </li> -->
+  
+    
+  
+      <li class="log_out">
+        <a href="#" (click)="logout()">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name" >Log out</span>
+        </a>
+      </li>
+    </ul>
+  
+  </div>
+  
+  
+  <section class="home-section">
+  
+    <router-outlet></router-outlet>
+  
+  </section>
+  
+  
+  
+  
+  
+  
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>

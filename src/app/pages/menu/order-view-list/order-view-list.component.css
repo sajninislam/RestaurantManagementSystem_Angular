@@ -1,0 +1,15 @@
+
+
+.home-content{
+  height: 100vh;
+  background-color: white;
+}
+
+.table{
+  font-size: 20px;
+};
+
+label{
+  font-weight: bold;
+  font-size: 20px;
+}

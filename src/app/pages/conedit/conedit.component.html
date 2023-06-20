@@ -1,0 +1,63 @@
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<h2 style="text-align: center;">Edit Information</h2>
+
+
+<a href="#" routerLink="post/:postId/edit" class="btn btn-primary">Back</a>
+
+<form action="" style="border:1px solid #ccc" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="container">
+      <hr>
+  
+      <!-- <label for="psw-repeat"><b>Cus Id</b></label>
+      <input type="text"  name="psw-repeat" required formControlName="id" > -->
+  
+      <label for="psw-repeat"><b>Name</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="name" >
+      <br><br>
+      <br>
+  
+      <label for="psw-repeat"><b>Email</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="email" >
+      <br><br>
+      <br>
+
+      <label for="psw-repeat"><b>Phnumber</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="phnumber" >
+      <br><br>
+      <br>
+
+      <label for="psw-repeat"><b>Booking Date</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="bookingDate" >
+      <br><br>
+      <br>
+
+      <label for="psw-repeat"><b>Booking Time</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="bookingTime" >
+      <br><br>
+      <br>
+      
+      <label for="psw-repeat"><b>Coming Time</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="comingTime" >
+      <br><br>
+      <br>
+
+      <label for="psw-repeat"><b>Guest</b></label>
+      <input type="text"  name="psw-repeat" required  formControlName="guest" >
+      <br><br>
+      <br>
+      
+    
+      <div class="clearfix">
+        <button type="submit" class="cancelbtn">Update</button>
+  
+      </div>
+    </div>
+  </form>
+

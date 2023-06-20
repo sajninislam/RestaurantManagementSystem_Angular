@@ -1,0 +1,144 @@
+
+
+<div style="margin-left: 100px; margin-right: 100px; margin-top: 20px;">
+    <h4 class="mb-4 pb-2 pb-md-0 mb-md-5">Add New Employee</h4>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                    <label class="form-label" for="fullNameid">Full Name</label>
+                    <input 
+                    type="text" 
+                    name="userfullname" 
+                    placeholder="Full Name" 
+
+                    [(ngModel)]="form.userfullname"
+                    required 
+                    minlength="3" 
+                    maxlength="20" 
+                    #userfullname="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && userfullname.errors }" id="fullNameid"
+                    
+                    class="form-control form-control-lg" />
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+
+                <div class="form-outline">
+                    <label class="form-label" for="userNameid">User Name</label>
+                    <input type="text" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20"
+                        #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+                        id="form2Example18" placeholder="User Name" id="userNameid"
+                        class="form-control form-control-lg" />
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <input type="email" placeholder="Email" name="email" [(ngModel)]="form.email" required email
+                        #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.errors }" id="emailAddress"
+                        class="form-control form-control-lg" />
+                    <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                        <div *ngIf="email.errors['required']">Email is required</div>
+                        <div *ngIf="email.errors['email']">
+                            Email must be a valid email address
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                    <label class="form-label" for="passwordid">Password</label>
+                    <input type="password" id="passwordid" placeholder="Password" name="password"
+                        [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                        class="form-control form-control-lg" />
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                    <label class="form-label" for="branchID">Branch</label>
+                    <select name="branchName" id="branchID" class="form-control form-control-lg"
+                        [(ngModel)]="form.branchName" #branchName="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && branchName.errors }">
+                        <option value="">Choose Branch Name</option>
+                        <option value="Branch 1">Gulshan</option>
+                        <option value="Branch 1">Banani</option>
+                        <option value="Branch 1">Motijheel</option>
+                        <option value="Branch 1">Dhanmondi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 pb-2">
+                <label for="emcatagoryid" class="form-label">Employee Designation</label>
+                <select name="empcatagoryname" id="emcatagoryid" class="form-control form-control-lg"
+                    [(ngModel)]="form.empcatagoryname" #empcatagoryname="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && empcatagoryname.errors}">
+                    <option value="">Choose Designation</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Manager">Sales Men</option>
+                    <option value="Manager">Delivery Men</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                    <label class="form-label" for="phoneNumberid">Phone Number</label>
+                    <input type="tel" id="phoneNumberid" placeholder="Phone Number" name="tel"
+                        [(ngModel)]="form.phnumber" required minlength="15" #phnumber="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && phnumber.errors }" class="form-control 
+                    form-control-lg" />
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <br>
+                <h6 class="mb-2 pb-1" style="font-weight: bold; font-size: 20px;">Gender: </h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="genders" id="femaleGender" value="Female"
+                        [(ngModel)]="form.gender" #gender="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && gender.errors }" />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male"
+                        [(ngModel)]="form.gender" #gender="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && gender.errors }" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="mt-4 pt-2">
+            <button class="btn btn-primary btn-block">Registration</button>
+        </div>
+    </form>
+
+    <div class="popup" id="popup" *ngIf="isSuccessful">
+        <div class="popups">
+            <h3>Your registration is successful!</h3>
+        </div>
+        <div>
+            <button style="margin-top: 35%; margin-left: 45%; width: 60px;" (click)="popupClose()">OK</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

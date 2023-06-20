@@ -1,0 +1,126 @@
+<!-- 
+
+
+<div class="container">
+    <br><br>
+  
+  
+    <br><br><br>
+  
+  
+    <br>
+      
+      <a href="#" routerLink="/contact" class="btn btn-success">Create New Post</a>
+        
+      <table class="table table-striped" border="2">
+          <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Booking Date</th>
+                  <th>Booking Time</th>
+                  <th>Coming Time</th>
+                  <th>Guest</th>
+                  <th>Action</th>                 
+                </tr>
+          </thead>
+          <tbody>
+                <tr *ngFor="let p of pp">
+                  <td>{{ p.id }}</td>
+                  <td>{{ p.name }}</td>
+                  <td>{{ p.email }}</td>
+                  <td>{{p.phnumber}}</td>
+                  <td>{{p.bookingDate}}</td>
+                  <td>{{p.bookingTime}}</td>
+                  <td>{{p.comingTime}}</td>
+                  <td>{{p.guest}}</td>
+                  
+
+                  <td>
+                    <a href="#" [routerLink]="['/post/', p.id, 'view']" class="btn btn-info">View</a>
+                    <a href="#" [routerLink]="['/post/', p.id, 'edit']" class="btn btn-primary">Edit</a>
+                    <button type="button" (click)="deletePost(p.id)" class="btn btn-danger">Delete</button>
+                  </td> 
+  
+                </tr>
+          </tbody>
+      </table>
+   </div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br> -->
+
+
+
+
+
+   
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="margin-left: 80px; margin-right: 80px;">
+  <h3 class="text-center" style="margin-left: 450px;"><b><u>All Reservation List</u></b></h3>
+
+  <table class="table">
+      <thead>
+        <tr>
+
+          <th>Id</th>
+                  <th  scope="col">Name</th>
+                  <th  scope="col">Email</th>
+                  <th  scope="col">Phone Number</th>
+                  <th  scope="col">Booking Date</th>
+                  <th  scope="col">Booking Time</th>
+                  <th  scope="col">Coming Time</th>
+                  <th  scope="col">Guest</th>
+                  <th  scope="col">Action</th>    
+  
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let p of pp">
+          <td>{{ p.id }}</td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.email }}</td>
+          <td>{{p.phnumber}}</td>
+          <td>{{p.bookingDate}}</td>
+          <td>{{p.bookingTime}}</td>
+          <td>{{p.comingTime}}</td>
+          <td>{{p.guest}}</td>
+          
+
+          <td>
+            <a href="#" [routerLink]="['/post/', p.id, 'view']" class="btn btn-info">View</a>
+            <!-- <a href="#" [routerLink]="['/post/', p.id, 'edit']" class="btn btn-primary">Edit</a> -->
+            <!-- <button type="button" (click)="deletePost(p.id)" class="btn btn-danger">Delete</button> -->
+
+            <a href="#" [routerLink]="['/post/', p.id, 'edit']" class="btn  btn-success" data-bs-toggle="modal" data-bs-target="#signupModal" (click)="edits(p)">
+              <i class="icon-align-left"></i> Edit</a>
+               &nbsp;
+              <a class="btn btn-danger" href="#" (click)="deletePost(p.id)">
+                <i class="icon-trash icon-large"></i> Delete</a>
+          
+          </td> 
+
+        </tr>
+
+     
+    </table>
+
+
+
+
+</div>
+
+

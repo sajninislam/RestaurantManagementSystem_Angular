@@ -1,0 +1,17 @@
+
+
+.home-content{
+
+    background: white;
+  }
+
+  input{
+    border-radius: 20px;
+}
+select{
+    border-radius: 20px;
+}
+
+select option{
+    border-radius: 20px;
+}

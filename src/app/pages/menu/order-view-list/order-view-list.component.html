@@ -1,0 +1,254 @@
+<br><br><br><br>
+<!-- <table class="table table-responsive">
+  <thead>
+      <tr>
+          <th>Sr.No</th>
+          <th>Product Name</th>
+          <th>Product Image</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+         
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of form; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{item.foodName}}</td>
+          <td><img style="width: 120px;" src="{{item.foodImg}}" alt=""></td>
+          <td style="width: 25%;">{{item.foodDetails}}</td>
+          <th style="width: 12%;">{{item.foodPrice}}</th>
+          <td style="width: 12%;">1</td>
+          <td style="width: 12%;">{{item.foodPrice * 1}}</td> -->
+
+
+        
+
+          <!-- <td>
+              <button (click)="removeItem(item)" class="btn btn-danger">Delete<i class="fas fa-trash-alt"></i></button> -->
+
+              <!-- <button (click)="removeItem(item)"><i class="fa fa-trash"></i></button> -->
+          <!-- </td> -->
+         
+      <!-- </tr> -->
+      <!-- <tr *ngFor="let item of products; let i = index">
+          <td colspan="4"></td>
+          <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+          <td><button routerLink="/menu" class="btn btn-primary">Shop More</button></td>
+          <td><button [routerLink]="'/OrderViewList/'+item.id" class="btn btn-success">Confirm Order</button></td>
+          <td><strong>Grand Total:৳{{grandTotal}}</strong></td>
+      </tr> -->
+      <!-- (click)="saveValue()" -->
+  <!-- </tbody>
+</table> -->
+
+
+
+
+<div class="home-content"  >
+    <br>
+    <br>
+  
+        
+      <div style="margin-left: 100px; margin-right: 200px; margin-top: 30px;">
+        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="margin-left: 400px;"><b><u>Your Order List</u></b></h3>
+
+
+
+        <div class="input-group" style="width: 520px; height: 40px; ">
+          <input [(ngModel)]="UserListSearch" type="search" class="form-control rounded" placeholder=" Search..." aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-outline-primary">Search</button>
+        </div>
+
+
+        <table class="table"> 
+          <thead>
+            <tr >
+    
+              <th scope="col" (click)="sort('id')">Order Id <span class="fa fa-sort"></span></th>
+              <th scope="col" (click)="sort('foodName')">Food Name  <span class="fa fa-sort"></span></th>
+              <th scope="col" (click)="sort('customerAddress')">Reciver Address <span class="fa fa-sort"></span></th>
+              <th scope="col" (click)="sort('createdAt')">Possible Delivered Time  <span class="fa fa-sort"></span></th>
+              <th scope="col" (click)="sort('orderStatus')">Status <span class="fa fa-sort"></span></th>
+              <th scope="col">Action</th>
+               
+            </tr>
+          </thead>
+          
+          <tbody>
+  
+            <tr *ngFor="let v of form">
+              <td>{{v.id}}</td>
+              <td>{{v.foodName}}</td>
+              <td>{{v.cusAddress}}</td>
+              <td>{{v.availableDate | date:'mediumDate'}}</td>
+               <td>{{v.orderStatus}}</td>
+      
+      
+              <td>
+              <!-- <button data-bs-toggle="modal" data-bs-target="#signupModal" class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);"></button> &nbsp;
+              <button class='bx bx-trash' style="font-size: 30px; color: red;"></button> -->
+
+
+             
+                <button style="font-size: 20px; " (click)="viewPdf(v)">View</button>&nbsp;
+              <button data-bs-toggle="modal" data-bs-target="#signupModal" class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);" (click)="edit(v)"></button> &nbsp;
+              
+              <button style="font-size: 20px; color: red;" (click)="del(v)">Cancel</button>
+      
+          
+              
+              </td>
+             
+            </tr>
+          </tbody>
+           
+          
+        </table>
+    
+      </div>
+    
+     
+        
+       
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+  
+  
+  
+       <!-- Order edit 1st popup Start -->
+      
+       <div class="modal fade" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+  
+            <form [formGroup]="group" (ngSubmit)="update()">
+              <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center">
+                  <i class="bi bi-person-lines-fill fs-3 me-2"></i>Order Item Edit Form            
+                </h5>
+                <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"> 
+  
+                <div class="container-fluid">
+                  <div class="row">
+  
+                    <!-- <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="branchnameid">Sender Address</label>
+                      <input formControlName="p_senderAddress" type="text" class="form-control shadow-none"
+                      
+                      name="branchname"
+                      id="branchnameid"
+                      >
+                    </div> -->
+  
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="branchnameid">Reciver Address</label>
+                      <input formControlName="customerAddress" type="text" class="form-control shadow-none"
+                      
+                      name="branchname"
+                      id="branchnameid"
+                      >
+                    </div>
+  
+                   
+                    <div class="col-md-6 ps-0">
+                      <label class="form-label" for="areaid">Possible time for Delivered</label>
+  
+                      <input formControlName="createdAt" type="text" class="form-control shadow-none"
+                      id="areaid"
+                      name="areaName"
+                      
+                      >
+                    </div>
+             
+  
+                  </div>
+                </div>
+                <div class="text-center my-1">
+                  <button type="submit" class="btn btn-dark shadow-none" data-bs-dismiss="modal" aria-label="Close">Update</button>
+      
+                </div>
+            
+              </div>       
+            </form>     
+          </div>
+        </div>
+      </div>
+  
+      <!-- Order edit 1st form popup end -->
+  
+  
+  
+  
+      <!-- Order status edit form popup start -->
+  
+      <div class="modal fade" id="signupModals" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="width: 400px; margin-left: 800px;">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+  
+            <form name="form" [formGroup]="group" (ngSubmit)="update()">
+              <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center">
+                  <i class="bi bi-person-lines-fill fs-3 me-2"></i> Status Edit Form            
+                </h5>
+                <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"> 
+  
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="thanaNameid">Choose Status</label>
+                    
+                      <select 
+                      formControlName="orderStatus"
+                      id='thanaNameid' 
+                      name='thanaName' 
+                     
+                      class="form-control form-control-lg"
+                     
+                      >
+                          
+                          <option value="Pending">Pending</option>    
+                          <option value="Received">Received</option>    
+                          <option value="OnTheWay">On The Way</option>    
+                          <option value="Cancel">Cancel</option>    
+                          <option value="Delivered">Delivered</option>    
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center my-1">
+                  <button type="submit" class="btn btn-dark shadow-none" data-bs-dismiss="modal" aria-label="Close">Update</button>
+                </div>
+            
+              </div>       
+            </form>     
+          </div>
+        </div>
+      </div>
+   <!-- Order status edit form popup end -->
+      

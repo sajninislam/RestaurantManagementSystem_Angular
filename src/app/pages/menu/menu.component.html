@@ -1,0 +1,48 @@
+
+<div class="container mt-5 mb-5" *ngIf="!isLoggedIn" routerLink="/loginForm">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let fd of filterCategory">
+            <div class="foodbox mt-3 mb-3">
+                <img src="{{fd.foodImg}}">
+                <h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{fd.foodName}}</h1>
+                <p>{{fd.foodDetails}}</p>
+                <p>{{fd.foodPrice | currency:'BDT'}}</p>
+                <br/>
+                <button class="btn btn-primary" (click)=addtocart(fd)>Add to cart &nbsp;<i class="bi bi-bag"></i></button>
+                <!-- <a class="buybtn" class="btn btn-primary" (click)=addtocart(fd) [routerLink]="['/cart',fd.id]">Add to cart &nbsp;<i class="bi bi-bag"></i></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 mb-5" *ngIf="isLoggedIn">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let fd of filterCategory">
+            <div class="foodbox mt-3 mb-3">
+                <img src="{{fd.foodImg}}">
+                <h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{fd.foodName}}</h1>
+                <p>{{fd.foodDetails}}</p>
+                <p>{{fd.foodPrice | currency:'BDT'}}</p>
+                <br/>
+                <button class="btn btn-primary" (click)=addtocart(fd)>Add to cart &nbsp;<i class="bi bi-bag"></i></button>
+                <!-- <a class="buybtn" class="btn btn-primary" (click)=addtocart(fd) [routerLink]="['/cart',fd.id]">Add to cart &nbsp;<i class="bi bi-bag"></i></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div> -->
